@@ -2,9 +2,11 @@ SRC_DIR    = src
 BIN_DIR    = bin
 QC_DIR     = quick-cliques
 
+# this branch use customized boost, you need to set -L parameter in `LIBS`, and set your boost path as the environment variable `LD_LIBRARY_PATH`.
+# if you use this way, you will get some warnings when making, but it can work. 
 CC = g++
 CPPFLAGS = -Wall -fopenmp -std=c++11 -g -O2
-LIBS = -l boost_timer -l boost_system -l boost_program_options
+LIBS = -L /home/work/wenhai/hylight/my_boost_1_71_0/lib -l boost_timer -l boost_system -l boost_program_options
 
 EXEC_NAMES = ViralQuasispecies
 
